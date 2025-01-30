@@ -7,7 +7,7 @@ Este módulo é utilizado para criação de um Network Security Group (NSG) e su
 ## Exemplo de utilização
 ```
 module "nsg" {
-  source = "github.com/eficazconsultoria/terraform-oci-nsg.git"
+  source = "github.com/felipejm91/terraform-oci-modules/terraform-oci-nsg.git"
   # Os valores do provider devem ser informados no arquivo main do projeto principal.
   providers = {
     oci = oci
