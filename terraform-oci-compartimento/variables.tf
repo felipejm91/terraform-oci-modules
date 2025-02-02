@@ -31,6 +31,12 @@ variable "compartment_name" {
   }
 }
 
+variable "enable_delete" {
+  type        = bool
+  default     = false
+  description = "Permite a criação de compartimentos com nomes iguais."
+}
+
 variable "tags_freeform" {
   type = map(string)
   default = {

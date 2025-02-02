@@ -1,8 +1,6 @@
 # Módulo Criação Compartimento OCI
 
-Este módulo é utilizado para criação de um Compartimento na OCI, seguindo o modelo de criação da Eficaz Marketing.
-
-
+Este módulo é utilizado para criação de um Compartimento na OCI.
 
 
 ## Exemplo de utilização
@@ -16,6 +14,7 @@ module "vcn" {
   parent_compartment_id   = var.parent_compartment_id
   compartment_description = var.compartment_description
   compartment_name        = var.compartment_name
+  enable_delete           = var.enable_delete
   tags_freeform           = var.tags_freeform
 }
 ```
@@ -36,11 +35,14 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 ```
     tags_freeform = {
         "ambiente" = "desenvolvimento"
-        "cliente"  = "Eficaz"
-        "projeto"  = "Eficaz"
+        "cliente"  = "Client-Name"
+        "projeto"  = "Project-Name"
     }
 ```
 
+### Não é obrigatório atribuir valor
+
+- **enable_delete**: Se atribuido como "false", permite a crição de compartimentos com nomes repetidos. Se definido como "true", será apresentado um erro de colisão de nomes com outro compartimento e  tentará eliminar o compartimento quando da destruição ou remoção da declaração de recursos.
 
 
 ## Outputs

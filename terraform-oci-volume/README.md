@@ -1,6 +1,6 @@
 # Módulo Criação Volume OCI
 
-Este módulo é utilizado para criação de um Volume na OCI e sua anexação à uma instância, seguindo o modelo de criação da Eficaz Marketing.
+Este módulo é utilizado para criação de um Volume na OCI e sua anexação à uma instância.
 
 
 
@@ -46,8 +46,8 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 ```
     tags_freeform = {
         "ambiente" = "desenvolvimento"
-        "cliente"  = "Eficaz"
-        "projeto"  = "Eficaz"
+        "cliente"  = "Client-Name"
+        "projeto"  = "Project-Name"
     }
 ```
  

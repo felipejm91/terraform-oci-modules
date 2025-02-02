@@ -1,6 +1,6 @@
 # Módulo Criação Instância OCI
 
-Este módulo é utilizado para criação de uma instância na OCI, seguindo o modelo de criação da Eficaz Marketing.
+Este módulo é utilizado para criação de uma instância na OCI.
 
 
 
@@ -64,8 +64,8 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 ```
     tags_freeform = {
         "ambiente" = "desenvolvimento"
-        "cliente"  = "Eficaz"
-        "projeto"  = "Eficaz"
+        "cliente"  = "Client-Name"
+        "projeto"  = "Project-Name"
     }
 ```
 

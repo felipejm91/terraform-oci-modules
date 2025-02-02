@@ -43,8 +43,8 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 ```
     tags_freeform = {
         "ambiente" = "desenvolvimento"
-        "cliente"  = "Eficaz"
-        "projeto"  = "Eficaz"
+        "cliente"  = "Client-Name"
+        "projeto"  = "Project-Name"
     }
 ```
  
