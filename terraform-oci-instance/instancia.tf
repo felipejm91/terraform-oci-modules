@@ -49,12 +49,10 @@ resource "oci_core_instance" "instancia" {
   }
 
   create_vnic_details {
-
-    assign_public_ip = false
-    display_name     = var.vnic_name
-    nsg_ids          = var.nsg_ids_public
-    subnet_id        = var.public_subnet_ocid
-    hostname_label   = var.vnic_name
+    display_name   = var.vnic_name
+    nsg_ids        = var.nsg_ids_public
+    subnet_id      = var.public_subnet_ocid
+    hostname_label = var.vnic_name
   }
 
   display_name = var.srv_name

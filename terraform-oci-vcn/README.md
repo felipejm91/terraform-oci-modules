@@ -3,6 +3,20 @@
 Este módulo é utilizado para criação de uma VCN na OCI.
 
 
+## Documentação
+
+[Internet Gateway](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_internet_gateway)
+
+[NAT Gateway](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_nat_gateway)
+
+[Service Gateway](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_service_gateway)
+
+[Route Table](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_route_table)
+
+[VCN](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_vcn)
+
+[Subnet](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_subnet)
+
 
 ## Exemplo de utilização
 ```
@@ -91,6 +105,8 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 
 
 - **cidr_blocks_private_subnet**: Bloco CIDR de IP que será utilizado pela subrede privada da VCN. Caso não seja atribuído valor, será utilizado o bloco ***172.16.1.0/24***.
+
+- **enabled**: Habilita o Gateway assim que criado.
 
 
 

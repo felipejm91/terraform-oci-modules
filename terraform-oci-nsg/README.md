@@ -3,6 +3,10 @@
 Este módulo é utilizado para criação de um Network Security Group (NSG) e sua vinculação à uma VCN.
 
 
+## Documentação
+
+[Clique aqui para ver a documentação](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_network_security_group)
+
 
 ## Exemplo de utilização
 ```

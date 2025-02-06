@@ -3,6 +3,11 @@
 Este módulo é utilizado para criação de um Compartimento na OCI.
 
 
+## Documentação
+
+[Clique aqui para ver a documentação](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_compartment)
+
+
 ## Exemplo de utilização
 ```
 module "vcn" {

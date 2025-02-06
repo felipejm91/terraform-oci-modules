@@ -3,6 +3,10 @@
 Este módulo é utilizado para criação de uma VCN na OCI.
 
 
+## Documentação
+
+[Clique aqui para ver a documentação](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_public_ip)
+
 
 ## Exemplo de utilização
 ```
@@ -32,7 +36,7 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 - **compartimento_ocid**: OCID do compartimento onde será criado o IP público.
 - **public_ip_lifetime**: Tipo de IP público que será criado. Pode utilizar os valores ***RESERVED***, que reserva um IP, ou ***EPHEMERAL***, que cria um IP que muda com o tempo.
 - **public_ip_display_name**: Nome de exibição do IP público.
-- **private_ip_ocid**: OCID do IP privado à quem será atribuído o IP público que esta sendo criado.
+- **private_ip_ocid**: OCID do IP privado que será atribuido o IP público. Obrigatório para IP público efemero e opcional para IP público reservado.
 - **tags_freeform**: Tags que serão atribuídas à VCN. Deve conter "ambiente", "cliente" e "projeto". Caso deseje, pode-se atribuir novas tags. Abaixo um exemplo:
 ```
     tags_freeform = {

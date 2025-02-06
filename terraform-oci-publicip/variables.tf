@@ -19,7 +19,7 @@ variable "public_ip_display_name" {
 variable "private_ip_ocid" {
   default     = ""
   type        = string
-  description = "Compartimento onde será criado o IP."
+  description = "OCID do IP privado que será atribuido o IP público. Obrigatório para IP público efemero e opcional para IP público reservado."
 }
 
 variable "tags_freeform" {

@@ -2,6 +2,12 @@
 
 Este módulo é utilizado para criação de uma instância na OCI.
 
+## Observação: **Antes de criar a instância, é necessário criar o Compartimento, a VCN e o volume. Caso utilize um IP público reservado, é necessário criar o IP antes da instãncia.**
+
+
+## Documentação
+
+[Clique aqui para ver a documentação](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_instance)
 
 
 ## Exemplo de utilização

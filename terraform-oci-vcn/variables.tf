@@ -78,6 +78,12 @@ variable "service_gateway_display_name" {
   description = "Nome do gateway de serviço."
 }
 
+variable "enabled" {
+  default     = true
+  type        = bool
+  description = "Habilitar o gateway assim que criado."
+}
+
 variable "tags_freeform" {
   type = map(string)
   default = {

@@ -3,6 +3,11 @@
 Este módulo é utilizado para criação de um Volume na OCI e sua anexação à uma instância.
 
 
+## Documentação
+
+[Volume](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_volume)
+
+[Anexação Volume](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/core_volume_attachment)
 
 ## Exemplo de utilização
 ```

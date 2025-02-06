@@ -17,7 +17,7 @@ resource "oci_core_public_ip" "public_ip" {
 }
 
 output "ip_address" {
-  value = oci_core_public_ip.public_ip.ip_address
+  value       = oci_core_public_ip.public_ip.ip_address
   description = "IP criado."
 }
 

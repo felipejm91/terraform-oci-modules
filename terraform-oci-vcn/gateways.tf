@@ -2,7 +2,7 @@
 resource "oci_core_internet_gateway" "internet_gateway" {
   compartment_id = var.compartimento_ocid
   vcn_id         = oci_core_vcn.vcn.id
-  enabled        = true
+  enabled        = var.enabled
   display_name   = var.internet_gateway_display_name
 
   freeform_tags = var.tags_freeform
