@@ -10,7 +10,7 @@ Este módulo é utilizado para criação de um Compartimento na OCI.
 
 ## Exemplo de utilização
 ```
-module "vcn" {
+module "compartimento" {
   source = "github.com/felipejm91/terraform-oci-modules/terraform-oci-compartimento.git"
   # Os valores do provider devem ser informados no arquivo main do projeto principal.
   providers = {
