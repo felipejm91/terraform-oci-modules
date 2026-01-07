@@ -18,7 +18,7 @@ module "nsg" {
   }
   compartimento_ocid = var.compartimento_ocid
   vcn_ocid           = var.vcn_ocid
-  name_display       = vr.name_display
+  name_display       = var.name_display
   tags_freeform      = var.tags_freeform
 }
 ```
