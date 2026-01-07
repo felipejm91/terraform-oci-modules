@@ -12,7 +12,7 @@ Este módulo é utilizado para criação de um Volume na OCI e sua anexação à
 ## Exemplo de utilização
 ```
 module "vcn" {
-  source = "github.com/felipejm91/terraform-oci-modules/terraform-oci-volume.git"
+  source = "github.com/felipejm91/terraform-oci-modules.git//terraform-oci-volume"
   # Os valores do provider devem ser informados no arquivo main do projeto principal.
   providers = {
     oci = oci
