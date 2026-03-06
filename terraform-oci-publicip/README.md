@@ -10,8 +10,8 @@ Este módulo é utilizado para criação de uma VCN na OCI.
 
 ## Exemplo de utilização
 ```
-module "vcn" {
-  source = "github.com/felipejm91/terraform-oci-modules/terraform-oci-publicip.git"
+module "publicip" {
+  source = "github.com/felipejm91/terraform-oci-modules.git//terraform-oci-publicip"
   # Os valores do provider devem ser informados no arquivo main do projeto principal.
   providers = {
     oci = oci

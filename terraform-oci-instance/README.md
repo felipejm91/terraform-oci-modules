@@ -13,7 +13,7 @@ Este módulo é utilizado para criação de uma instância na OCI.
 ## Exemplo de utilização
 ```
 module "instancia" {
-  source = "github.com/felipejm91/terraform-oci-modules/terraform-oci-instance.git"
+  source = "github.com/felipejm91/terraform-oci-modules.git//terraform-oci-instance"
   # Os valores do provider devem ser informados no arquivo main do projeto principal.
   providers = {
     oci = oci
