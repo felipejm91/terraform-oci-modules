@@ -53,7 +53,7 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 
 - **srv_name**: Nome que será atribuído à instância.
 
-- **ssh_path**: Caminho para a chave SSH que será utilizada para acesso à instância.
+- **ssh_path**: Caminho para a chave SSH que será utilizada para acesso à instância. Utilizar chave pública.
 
 - **nsg_ids_public**: Lista OCID das Network Security Group que serão atribuídas à VNIC pública.
 
