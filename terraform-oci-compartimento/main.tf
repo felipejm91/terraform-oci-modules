@@ -3,7 +3,7 @@ terraform {
   required_providers {
     oci = {
       source  = "oracle/oci"
-      version = ">= 6.6.0"
+      version = "~> 6.6.0"
     }
   }
 }
@@ -16,7 +16,3 @@ resource "oci_identity_compartment" "compartimento" {
   freeform_tags  = var.tags_freeform
 }
 
-output "ocid_compartimento" {
-  value       = oci_identity_compartment.compartimento.id
-  description = "OCID do compartimento criado"
-}

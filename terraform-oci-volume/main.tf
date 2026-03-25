@@ -3,7 +3,7 @@ terraform {
   required_providers {
     oci = {
       source  = "oracle/oci"
-      version = ">= 6.6.0"
+      version = "~> 6.6.0"
     }
   }
 }
@@ -28,4 +28,11 @@ resource "oci_core_volume_attachment" "volume_attachment" {
   is_pv_encryption_in_transit_enabled = "true"
   is_read_only                        = "false"
   is_shareable                        = "true"
+}
+
+resource "oci_core_volume_backup_policy_assignment" "volume_backup_policy_assignment" {
+  count        = var.volume_backup_policy_id != null ? 1 : 0
+  asset_id     = oci_core_volume.data_volume.id
+  policy_id    = var.volume_backup_policy_id
+
 }

@@ -34,7 +34,7 @@ variable "compartment_name" {
 variable "enable_delete" {
   type        = bool
   default     = false
-  description = "Permite a criação de compartimentos com nomes iguais."
+  description = "Controla se o compartimento pode ser excluído. Se 'true', o compartimento pode ser excluído quando vazio. Se 'false' (padrão), o compartimento não pode ser excluído."
 }
 
 variable "tags_freeform" {
@@ -44,7 +44,7 @@ variable "tags_freeform" {
     "cliente"  = ""
     "projeto"  = ""
   }
-  description = "Tags para identificação dos recursos"
+  description = "Tags de formato livre para identificação dos recursos. As chaves 'ambiente', 'cliente' e 'projeto' são esperadas e seus valores devem ser fornecidos. Outras tags podem ser adicionadas conforme necessário."
 }
 
 

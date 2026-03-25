@@ -1,4 +1,3 @@
-
 resource "oci_core_instance" "instancia" {
 
   availability_domain = var.instance_availability_domain
@@ -6,51 +5,20 @@ resource "oci_core_instance" "instancia" {
   shape               = var.instance_shape
 
   agent_config {
-
-    are_all_plugins_disabled = false
-    plugins_config {
-      desired_state = "DISABLED"
-      name          = "Vulnerability Scanning"
+    is_management_disabled = false # Set to true to disable Management Agent, false to enable
+    is_monitoring_disabled = false # Set to true to disable Monitoring Agent, false to enable
+    dynamic "plugins_config" {
+      for_each = var.agent_plugins_desired_state
+      content {
+        desired_state = plugins_config.value
+        name          = plugins_config.key
+      }
     }
-    plugins_config {
-      desired_state = "DISABLED"
-      name          = "Management Agent"
-    }
-    plugins_config {
-      desired_state = "ENABLED"
-      name          = "Custom Logs Monitoring"
-    }
-    plugins_config {
-      desired_state = "DISABLED"
-      name          = "Compute RDMA GPU Monitoring"
-    }
-    plugins_config {
-      desired_state = "ENABLED"
-      name          = "Compute Instance Monitoring"
-    }
-    plugins_config {
-      desired_state = "DISABLED"
-      name          = "Compute HPC RDMA Auto-Configuration"
-    }
-    plugins_config {
-      desired_state = "DISABLED"
-      name          = "Compute HPC RDMA Authentication"
-    }
-    plugins_config {
-      desired_state = "DISABLED"
-      name          = "Block Volume Management"
-    }
-    plugins_config {
-      desired_state = "DISABLED"
-      name          = "Bastion"
-    }
-    is_management_disabled = false
-    is_monitoring_disabled = false
   }
 
   create_vnic_details {
     display_name   = var.vnic_name
-    nsg_ids        = var.nsg_ids_public
+    nsg_ids        = var.vnic_nsg_ids # Renamed from nsg_ids_public
     subnet_id      = var.public_subnet_ocid
     hostname_label = var.vnic_name
   }
@@ -60,7 +28,7 @@ resource "oci_core_instance" "instancia" {
   freeform_tags = var.tags_freeform
 
   launch_options {
-    # boot_volume_type = var.instance_launch_options_boot_volume_type                
+    boot_volume_type                    = var.boot_volume_type # Uncommented and using variable
     is_pv_encryption_in_transit_enabled = "true"
     network_type                        = "PARAVIRTUALIZED"
   }

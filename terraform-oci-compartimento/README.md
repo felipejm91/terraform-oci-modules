@@ -12,7 +12,8 @@ Este módulo é utilizado para criação de um Compartimento na OCI.
 ```
 module "compartimento" {
   source = "github.com/felipejm91/terraform-oci-modules.git//terraform-oci-compartimento"
-  # Os valores do provider devem ser informados no arquivo main do projeto principal.
+  # O provider OCI deve ser configurado no arquivo main do seu projeto principal.
+  # Considere utilizar o módulo `terraform-oci-provider` para gerenciar a configuração do provider de forma centralizada.
   providers = {
     oci = oci
   }
@@ -36,7 +37,7 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 - **parent_compartment_id**: OCID do compartimento pai, onde será criado o compartimento.
 - **compartment_description**: Descrição do compartimento que está sendo criado.
 - **compartment_name**: Nome do compartimento que está sendo criado.
-- **tags_freeform**: Tags que serão atribuídas à VCN. Deve conter "ambiente", "cliente" e "projeto". Caso deseje, pode-se atribuir novas tags. Abaixo um exemplo:
+- **tags_freeform**: Tags de formato livre para identificação dos recursos. As chaves `ambiente`, `cliente` e `projeto` são esperadas e seus valores devem ser fornecidos. Outras tags podem ser adicionadas conforme necessário. Abaixo um exemplo:
 ```
     tags_freeform = {
         "ambiente" = "desenvolvimento"
@@ -47,9 +48,9 @@ Este módulo contém as seguintes variáveis que podem ser utilizadas para cria�
 
 ### Não é obrigatório atribuir valor
 
-- **enable_delete**: Se atribuido como "false", permite a crição de compartimentos com nomes repetidos. Se definido como "true", será apresentado um erro de colisão de nomes com outro compartimento e  tentará eliminar o compartimento quando da destruição ou remoção da declaração de recursos.
+- **enable_delete**: Controla se o compartimento pode ser excluído. Se `true`, o compartimento pode ser excluído quando vazio. Se `false` (padrão), o compartimento não pode ser excluído.
 
 
 ## Outputs
 
-- **ocid_compartimento**: Exibe o OCID do compartimento criado.
+- **ocid_compartimento**: OCID do compartimento criado.

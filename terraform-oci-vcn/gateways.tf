@@ -25,7 +25,7 @@ resource "oci_core_service_gateway" "service_gateway" {
 
   services {
     # All GRU Services In Oracle Services Network
-    service_id = "ocid1.service.oc1.sa-saopaulo-1.aaaaaaaacd57uig6rzxm2qfipukbqpje2bhztqszh3aj7zk2jtvf6gvntena"
+    service_id = var.service_gateway_service_id
   }
   display_name = var.service_gateway_display_name
 
