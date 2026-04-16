@@ -50,9 +50,26 @@ module "instancia" {
 
 ### Opcionais
 
+<<<<<<< HEAD
 - **instance_shape**: Shape da instância. Padrão: `VM.Standard.E4.Flex`.
 - **instance_availability_domain**: Domínio de disponibilidade. Padrão: `KOws:SA-SAOPAULO-1-AD-1`.
 - **tags_freeform**: Tags de formato livre para identificação do recurso. Exemplo:
+=======
+- **ssh_path**: Caminho para a chave SSH que será utilizada para acesso à instância. Utilizar chave pública.
+
+- **nsg_ids_public**: Lista OCID das Network Security Group que serão atribuídas à VNIC pública.
+
+ 
+
+### Opcional atribuir valor
+
+
+- **instance_shape**: Shape que será utilizado para criação da instância. Se não for passado valor, será utilizado **VM.Standard.E4.Flex**
+
+- **instance_availability_domain**: Domínio de disponibilidade da instância. Se não for passado valor, será utilizado ***KOws:SA-SAOPAULO-1-AD-1***
+
+- **tags_freeform**: Tags que serão atribuídas à instância. Deve conter "ambiente", "cliente" e "projeto". Abaixo um exemplo:
+>>>>>>> 871374a846968de5fb2c26f13fcdf37e2dd49015
 ```
   tags_freeform = {
     "ambiente" = "desenvolvimento"
