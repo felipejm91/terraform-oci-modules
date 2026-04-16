@@ -31,8 +31,8 @@ resource "oci_core_volume_attachment" "volume_attachment" {
 }
 
 resource "oci_core_volume_backup_policy_assignment" "volume_backup_policy_assignment" {
-  count        = var.volume_backup_policy_id != null ? 1 : 0
-  asset_id     = oci_core_volume.data_volume.id
-  policy_id    = var.volume_backup_policy_id
+  count     = var.volume_backup_policy_id != null ? 1 : 0
+  asset_id  = oci_core_volume.data_volume.id
+  policy_id = var.volume_backup_policy_id
 
 }

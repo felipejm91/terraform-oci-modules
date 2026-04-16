@@ -18,9 +18,13 @@ resource "oci_core_instance" "instancia" {
 
   create_vnic_details {
     display_name   = var.vnic_name
-    nsg_ids        = var.vnic_nsg_ids # Renamed from nsg_ids_public
+    nsg_ids        = var.vnic_nsg_ids
     subnet_id      = var.public_subnet_ocid
     hostname_label = var.vnic_name
+
+    # Public IP assignment
+    assign_public_ip = var.assign_new_public_ip # Assigns an ephemeral public IP if true
+
   }
 
   display_name = var.srv_name
@@ -28,7 +32,7 @@ resource "oci_core_instance" "instancia" {
   freeform_tags = var.tags_freeform
 
   launch_options {
-    boot_volume_type                    = var.boot_volume_type # Uncommented and using variable
+    boot_volume_type                    = var.boot_volume_type
     is_pv_encryption_in_transit_enabled = "true"
     network_type                        = "PARAVIRTUALIZED"
   }

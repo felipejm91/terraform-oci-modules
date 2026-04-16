@@ -52,8 +52,8 @@ resource "oci_core_network_security_group_security_rule" "ingress_rules" {
   }
 
   # Conditional attributes for source
-  source_type                 = each.value.source_type
-  source                      = each.value.source
+  source_type = each.value.source_type
+  source      = each.value.source
 }
 
 # Egress Rules
@@ -104,6 +104,6 @@ resource "oci_core_network_security_group_security_rule" "egress_rules" {
   }
 
   # Conditional attributes for destination
-  destination_type            = each.value.destination_type
-  destination                 = each.value.destination
+  destination_type = each.value.destination_type
+  destination      = each.value.destination
 }

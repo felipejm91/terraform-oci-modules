@@ -146,15 +146,15 @@ variable "boot_volume_type" {
 variable "agent_plugins_desired_state" {
   type = map(string)
   default = {
-    "Vulnerability Scanning"             = "DISABLED"
-    "Management Agent"                   = "DISABLED"
-    "Custom Logs Monitoring"             = "ENABLED"
-    "Compute RDMA GPU Monitoring"        = "DISABLED"
-    "Compute Instance Monitoring"        = "ENABLED"
+    "Vulnerability Scanning"              = "DISABLED"
+    "Management Agent"                    = "DISABLED"
+    "Custom Logs Monitoring"              = "ENABLED"
+    "Compute RDMA GPU Monitoring"         = "DISABLED"
+    "Compute Instance Monitoring"         = "ENABLED"
     "Compute HPC RDMA Auto-Configuration" = "DISABLED"
-    "Compute HPC RDMA Authentication"    = "DISABLED"
-    "Block Volume Management"            = "DISABLED"
-    "Bastion"                            = "DISABLED"
+    "Compute HPC RDMA Authentication"     = "DISABLED"
+    "Block Volume Management"             = "DISABLED"
+    "Bastion"                             = "DISABLED"
   }
   description = "Estado desejado para os plugins do Oracle Cloud Agent. As chaves são os nomes dos plugins e os valores são 'ENABLED' ou 'DISABLED'."
   validation {
@@ -163,4 +163,21 @@ variable "agent_plugins_desired_state" {
     ])
     error_message = "Os estados dos plugins devem ser 'ENABLED' ou 'DISABLED'."
   }
+}
+
+variable "reserved_public_ip_ocid" {
+  type        = string
+  default     = null
+  description = "OCID de um IP público reservado existente para ser atribuído à VNIC primária. Opcional."
+  nullable    = true
+  validation {
+    condition     = var.reserved_public_ip_ocid == null || var.assign_new_public_ip == false
+    error_message = "Não é possível atribuir um IP público reservado e, ao mesmo tempo, solicitar um novo IP público efêmero. Escolha apenas uma opção."
+  }
+}
+
+variable "assign_new_public_ip" {
+  type        = bool
+  default     = false
+  description = "Se 'true', um novo IP público efêmero será atribuído à VNIC primária. Se 'false', nenhum IP público efêmero será atribuído, a menos que 'reserved_public_ip_ocid' seja fornecido."
 }

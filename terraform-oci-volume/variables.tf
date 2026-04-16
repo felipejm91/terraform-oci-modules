@@ -73,5 +73,5 @@ variable "volume_backup_policy_id" {
   type        = string
   default     = null
   description = "OCID da política de backup do volume. Opcional. Se não fornecido, nenhuma política será atribuída."
-  nullable = true # Allow null value for default
+  nullable    = true # Allow null value for default
 }
